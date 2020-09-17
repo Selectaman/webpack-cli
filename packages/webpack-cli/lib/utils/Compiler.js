@@ -118,7 +118,7 @@ class Compiler {
         }
 
         //warn the user if bail and watch both are used together
-        if (this.compiler.options.bail && outputOptions.watch) {
+        if (this.compiler.options.bail && (outputOptions.watch || options.watch)) {
             logger.warn('You are using "bail" with "watch". "bail" will still exit webpack when the first error is found.');
         }
 

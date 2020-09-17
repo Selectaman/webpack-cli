@@ -127,11 +127,6 @@ class ConfigGroup extends GroupHelper {
             newOptionsObject['options'] = configOptions;
         }
 
-        //warn the user if bail and watch both are used together
-        if (configOptions.bail && configOptions.watch) {
-            logger.warn('You are using "bail" with "watch". "bail" will still exit webpack when the first error is found.');
-        }
-
         if (configOptions && configPath.includes('.webpack')) {
             const currentPath = configPath;
             const parentContext = dirname(currentPath).split(sep).slice(0, -1).join(sep);
